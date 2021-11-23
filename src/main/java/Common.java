@@ -14,13 +14,9 @@ public class Common {
   static public double R1 () {
     java.util.Random generator = new java.util.Random(System.currentTimeMillis());
     double U = generator.nextDouble();
-    while (U < 0 || U >= 1) {
-      U = generator.nextDouble();
-    }
+
     double V = generator.nextDouble();
-    while (V < 0 || V >= 1) {
-      V = generator.nextDouble();
-    }
+
     double X =  Math.sqrt((8/Math.E)) * (V - 0.5)/U;
     if (!(R2(X,U))) { return -1; }
     if (!(R3(X,U))) { return -1; }

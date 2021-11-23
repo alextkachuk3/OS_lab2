@@ -1,18 +1,7 @@
-// This file contains the main() function for the Scheduling
-// simulation.  Init() initializes most of the variables by
-// reading from a provided file.  SchedulingAlgorithm.Run() is
-// called from main() to run the simulation.  Summary-Results
-// is where the summary results are written, and Summary-Processes
-// is where the process scheduling summary is written.
-
-// Created by Alexander Reeder, 2001 January 06
-
-
-
-import javax.naming.directory.DirContext;
 import java.io.*;
 import java.nio.file.Paths;
-import java.util.*;
+import java.util.StringTokenizer;
+import java.util.Vector;
 
 public class Scheduling {
 
@@ -32,8 +21,7 @@ public class Scheduling {
     int ioblocking = 0;
     double X = 0.0;
 
-    try {   
-      //BufferedReader in = new BufferedReader(new FileReader(f));
+    try {
       DataInputStream in = new DataInputStream(new FileInputStream(f));
       while ((line = in.readLine()) != null) {
         if (line.startsWith("numprocess")) {
@@ -116,7 +104,6 @@ public class Scheduling {
     }
     result = SchedulingAlgorithm.Run(runtime, processVector, result);    
     try {
-      //BufferedWriter out = new BufferedWriter(new FileWriter(resultsFile));
       PrintStream out = new PrintStream(new FileOutputStream(resultsFile));
       out.println("Scheduling Type: " + result.schedulingType);
       out.println("Scheduling Name: " + result.schedulingName);
