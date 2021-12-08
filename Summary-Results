@@ -1,9 +1,13 @@
-Scheduling Type: Batch (Nonpreemptive)
-Scheduling Name: First-Come First-Served
-Simulation Run Time: 2562
+Scheduling Type: Preemptive
+Scheduling Name: Lottery Scheduling
+Simulation Run Time: 3608
 Mean: 1100
 Standard Deviation: 510
-Process #	CPU Time	IO Blocking	CPU Completed	CPU Blocked
-0		854 (ms)	100 (ms)	854 (ms)	8 times
-1		854 (ms)	500 (ms)	854 (ms)	1 times
-2		854 (ms)	30 (ms)		854 (ms)	28 times
+Quantum: 5
+Process #		Arrival Time		CPU Time		IO Blocking		CPU Completed		CPU Blocked
+0				5 (ms)			459 (ms)				100 (ms)				459				4 times
+1				0 (ms)			966 (ms)				500 (ms)				966				1 times
+2				25 (ms)			1491 (ms)				30 (ms)				1491				48 times
+3				20 (ms)			432 (ms)				800 (ms)				432				0 times
+4				10 (ms)			130 (ms)				700 (ms)				130				0 times
+5				15 (ms)			130 (ms)				150 (ms)				130				0 times
